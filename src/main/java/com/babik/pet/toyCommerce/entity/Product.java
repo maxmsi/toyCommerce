@@ -1,4 +1,4 @@
-package com.babik.pet.toyCommerce.model;
+package com.babik.pet.toyCommerce.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 

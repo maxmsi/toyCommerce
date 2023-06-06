@@ -1,6 +1,6 @@
 package com.babik.pet.toyCommerce.repository;
 
-import com.babik.pet.toyCommerce.model.Category;
+import com.babik.pet.toyCommerce.entity.Category;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

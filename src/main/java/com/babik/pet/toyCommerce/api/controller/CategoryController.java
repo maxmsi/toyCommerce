@@ -1,7 +1,7 @@
 package com.babik.pet.toyCommerce.api.controller;
 
 import com.babik.pet.toyCommerce.api.ApiResponse;
-import com.babik.pet.toyCommerce.model.Category;
+import com.babik.pet.toyCommerce.entity.Category;
 import com.babik.pet.toyCommerce.service.CategorySerivce;
 
 import org.springframework.beans.factory.annotation.Autowired;

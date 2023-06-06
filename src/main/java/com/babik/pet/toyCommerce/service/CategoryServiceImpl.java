@@ -3,7 +3,7 @@ package com.babik.pet.toyCommerce.service;
 
 
 
-import com.babik.pet.toyCommerce.model.Category;
+import com.babik.pet.toyCommerce.entity.Category;
 import com.babik.pet.toyCommerce.repository.CategoryRepository;
 
 

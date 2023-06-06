@@ -1,6 +1,6 @@
 package com.babik.pet.toyCommerce.service;
 
-import com.babik.pet.toyCommerce.model.Category;
+import com.babik.pet.toyCommerce.entity.Category;
 
 import java.util.List;
 import java.util.Optional;

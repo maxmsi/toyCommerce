@@ -1,4 +1,4 @@
-package com.babik.pet.toyCommerce.model;
+package com.babik.pet.toyCommerce.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
