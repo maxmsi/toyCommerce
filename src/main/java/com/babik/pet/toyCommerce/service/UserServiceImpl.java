@@ -2,9 +2,7 @@ package com.babik.pet.toyCommerce.service;
 
 import com.babik.pet.toyCommerce.entity.ConfirmationToken;
 import com.babik.pet.toyCommerce.entity.User;
-import com.babik.pet.toyCommerce.repository.ConfirmationTokenRepository;
 import com.babik.pet.toyCommerce.repository.UserRepository;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -27,6 +25,7 @@ public class UserServiceImpl implements UserDetailsService {
     private final ConfirmationTokenService confirmationTokenService;
     private final EmailSenderService emailSenderService;
     private final BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
+
 
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
@@ -68,7 +67,7 @@ public class UserServiceImpl implements UserDetailsService {
         mailMessage.setSubject("Mail Confirmation Link!");
         mailMessage.setFrom("<ToyCommerce Wita w gronie użytkowników!>");
         mailMessage.setText(
-                "Thank you for registering. Please click on the below link to activate your account." + "http://localhost:8080/sign-up/confirm?token="
+                "Dziękujemy za rejestracje w naszym serwisie. Abyś mógł cieszyć się zakupami, proszę potwierdź rejestrację swojego konta klikając w link" + "http://localhost:8080/sign-up/confirm?token="
                         + token);
 
         emailSenderService.sendEmail(mailMessage);
