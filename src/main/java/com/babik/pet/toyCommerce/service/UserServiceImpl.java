@@ -12,7 +12,6 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
-import org.springframework.security.crypto.bcrypt.BCrypt;
 
 import java.text.MessageFormat;
 import java.util.Optional;
@@ -21,13 +20,13 @@ import lombok.AllArgsConstructor;
 
 @Service
 @AllArgsConstructor
-public class UserServiceImpl implements UserDetailsService{
+public class UserServiceImpl implements UserDetailsService {
 
 
     private final UserRepository userRepository;
     private final ConfirmationTokenService confirmationTokenService;
     private final EmailSenderService emailSenderService;
-    private final  BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
+    private final BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
 
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
@@ -36,8 +35,7 @@ public class UserServiceImpl implements UserDetailsService{
 
         if (optionalUser.isPresent()) {
             return optionalUser.get();
-        }
-        else {
+        } else {
             throw new UsernameNotFoundException(MessageFormat.format("User with email {0} cannot be found.", email));
         }
     }
@@ -56,7 +54,7 @@ public class UserServiceImpl implements UserDetailsService{
 
     }
 
-    void  confirmUser(ConfirmationToken confirmationToken){
+    void confirmUser(ConfirmationToken confirmationToken) {
         User user = confirmationToken.getUser();
         user.setEnabled(true);
         userRepository.save(user);
