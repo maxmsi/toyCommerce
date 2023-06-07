@@ -1,10 +1,13 @@
 package com.babik.pet.toyCommerce.entity;
 
+import java.util.Set;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -18,9 +21,13 @@ public class Category {
     @Column(name = "category_name")
     private  String categoryName;
 
+    @Column(name="description")
     private  String description;
-
+    @Column(name="imageUrl")
     private String imageUrl;
+
+    @OneToMany(mappedBy="categoryId")
+    private Set<Product> products;
 
 
     public Category() {

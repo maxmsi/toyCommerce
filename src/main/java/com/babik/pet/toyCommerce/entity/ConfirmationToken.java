@@ -1,5 +1,7 @@
-package com.babik.pet.toyCommerce.entity.user;
+package com.babik.pet.toyCommerce.entity;
 
+
+import com.babik.pet.toyCommerce.entity.User;
 
 import java.time.LocalDate;
 import java.util.UUID;
@@ -37,7 +39,7 @@ public class ConfirmationToken {
     @JoinColumn(nullable = false, name = "user_id")
     private User user;
 
-    ConfirmationToken(User user) {
+    public ConfirmationToken(User user) {
         this.user = user;
         this.createdDate = LocalDate.now();
         this.confirmationToken = UUID.randomUUID().toString();

@@ -9,7 +9,7 @@ import jakarta.persistence.Id;
 
 public class CategoryDto {
 
-    private Integer id;
+    private @NotNull Integer id;
 
     private  @NotNull String categoryName;
 

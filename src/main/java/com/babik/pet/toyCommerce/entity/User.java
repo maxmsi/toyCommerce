@@ -1,5 +1,7 @@
-package com.babik.pet.toyCommerce.entity.user;
+package com.babik.pet.toyCommerce.entity;
 
+
+import com.babik.pet.toyCommerce.entity.UserRole;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -25,7 +27,7 @@ import lombok.Setter;
 @EqualsAndHashCode
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity(name = "Users")
+@Entity(name = "users")
 public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

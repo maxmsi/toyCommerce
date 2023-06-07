@@ -22,7 +22,7 @@ public class ProductApiController {
     @Autowired
     ProductService productService;
     @Autowired
-    CategorySerivce categoryService ;
+    CategorySerivce categoryService;
     @PostMapping("/add")
     public ResponseEntity<ApiResponse> addProduct(@RequestBody ProductDto productDto) {
         Optional<Category> optionalCategory = categoryService.readCategory(productDto.getCategoryId());
