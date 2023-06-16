@@ -3,7 +3,7 @@ package com.babik.pet.toyCommerce.service;
 import com.babik.pet.toyCommerce.entity.ConfirmationToken;
 import com.babik.pet.toyCommerce.entity.User;
 import com.babik.pet.toyCommerce.repository.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -18,7 +18,7 @@ import lombok.AllArgsConstructor;
 
 @Service
 @AllArgsConstructor
-public class UserServiceImpl implements UserDetailsService {
+public class UserService implements UserDetailsService {
 
 
     private final UserRepository userRepository;
@@ -39,7 +39,7 @@ public class UserServiceImpl implements UserDetailsService {
         }
     }
 
-    void signUpUser(User user) {
+    public void signUpUser(User user) {
 
         final String encryptedPassword = bCryptPasswordEncoder.encode(user.getPassword());
 
@@ -53,7 +53,7 @@ public class UserServiceImpl implements UserDetailsService {
 
     }
 
-    void confirmUser(ConfirmationToken confirmationToken) {
+    public void confirmUser(ConfirmationToken confirmationToken) {
         User user = confirmationToken.getUser();
         user.setEnabled(true);
         userRepository.save(user);

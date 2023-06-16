@@ -5,10 +5,13 @@ import com.babik.pet.toyCommerce.repository.ConfirmationTokenRepository;
 
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 import lombok.AllArgsConstructor;
 
 @Service
 @AllArgsConstructor
+public
 class ConfirmationTokenService {
 
     private final ConfirmationTokenRepository confirmationTokenRepository;
@@ -20,5 +23,11 @@ class ConfirmationTokenService {
     void deleteConfirmationToken(Long id){
         confirmationTokenRepository.deleteById(id);
     }
+
+    public Optional<ConfirmationToken> findConfirmationTokenByToken(String token) {
+
+        return confirmationTokenRepository.findConfirmationTokenByConfirmationToken(token);
+    }
+
 
 }

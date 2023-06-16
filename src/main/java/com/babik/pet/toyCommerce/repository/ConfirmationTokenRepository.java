@@ -2,9 +2,11 @@ package com.babik.pet.toyCommerce.repository;
 
 import com.babik.pet.toyCommerce.entity.ConfirmationToken;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.CrudRepository;
 
-public interface ConfirmationTokenRepository extends JpaRepository<ConfirmationToken,Long> {
+import java.util.Optional;
 
+public interface ConfirmationTokenRepository extends CrudRepository<ConfirmationToken,Long> {
+    Optional<ConfirmationToken> findConfirmationTokenByConfirmationToken(String token);
 
 }
