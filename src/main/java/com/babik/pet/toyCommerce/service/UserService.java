@@ -3,14 +3,12 @@ package com.babik.pet.toyCommerce.service;
 import com.babik.pet.toyCommerce.entity.ConfirmationToken;
 import com.babik.pet.toyCommerce.entity.User;
 import com.babik.pet.toyCommerce.repository.UserRepository;
-
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
-
 import java.text.MessageFormat;
 import java.util.Optional;
 

@@ -1,7 +1,5 @@
 package com.babik.pet.toyCommerce.entity;
-
 import java.util.Set;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -17,18 +15,14 @@ public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-
     @Column(name = "category_name")
     private  String categoryName;
-
     @Column(name="description")
     private  String description;
     @Column(name="imageUrl")
     private String imageUrl;
-
     @OneToMany(mappedBy="categoryId")
     private Set<Product> products;
-
 
     public Category() {
     }

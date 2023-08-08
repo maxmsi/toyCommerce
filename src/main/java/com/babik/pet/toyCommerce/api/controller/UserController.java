@@ -4,14 +4,11 @@ import com.babik.pet.toyCommerce.entity.ConfirmationToken;
 import com.babik.pet.toyCommerce.entity.User;
 import com.babik.pet.toyCommerce.service.ConfirmationTokenService;
 import com.babik.pet.toyCommerce.service.UserService;
-
-import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Optional;
 
@@ -26,9 +23,6 @@ public class UserController {
 
     private final ConfirmationTokenService confirmationTokenService;
 
-
-
-    @ResponseBody
     @GetMapping(value="/sign-in")
     String signIn(Model model) {
 
