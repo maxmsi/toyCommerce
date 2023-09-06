@@ -5,14 +5,12 @@ import com.babik.pet.toyCommerce.entity.User;
 import com.babik.pet.toyCommerce.service.ConfirmationTokenService;
 import com.babik.pet.toyCommerce.service.UserService;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.Optional;
-
-import ch.qos.logback.core.model.Model;
 import lombok.AllArgsConstructor;
 
 @Controller
@@ -40,7 +38,7 @@ public class UserController {
 
         userService.signUpUser(user);
 
-        return "redirect:/sign-in";
+        return "redirect:/sign-in-form";
     }
 
     @GetMapping("/confirm")

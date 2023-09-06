@@ -6,6 +6,7 @@ import com.babik.pet.toyCommerce.service.CategorySerivce;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -24,7 +25,8 @@ public class CategoryController {
     @Autowired
     private CategorySerivce categoryService;
 
-    @GetMapping("/")
+    @GetMapping(value = "/all",
+                produces =  MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<Category>> getCategories() {
         List<Category> body = categoryService.listCategories();
         return new ResponseEntity<>(body, HttpStatus.OK);
@@ -36,7 +38,7 @@ public class CategoryController {
             return new ResponseEntity<ApiResponse>(new ApiResponse(false, "category already exists"), HttpStatus.CONFLICT);
         }
         categoryService.createCategory(category);
-        return new ResponseEntity<>(new ApiResponse(true, "created the category"), HttpStatus.CREATED);
+        return new ResponseEntity<>(new ApiResponse(true, "Created the category"), HttpStatus.CREATED);
     }
 
 

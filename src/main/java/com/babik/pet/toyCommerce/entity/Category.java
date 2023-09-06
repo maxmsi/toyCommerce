@@ -1,24 +1,32 @@
 package com.babik.pet.toyCommerce.entity;
+
 import java.util.Set;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+import lombok.Getter;
 
 @Entity
 @Table(name = "categories")
 public class Category {
 
+    @Getter
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    @Getter
     @Column(name = "category_name")
     private  String categoryName;
+    @Getter
     @Column(name="description")
     private  String description;
+    @Getter
     @Column(name="imageUrl")
     private String imageUrl;
     @OneToMany(mappedBy="categoryId")
@@ -38,16 +46,8 @@ public class Category {
         this.imageUrl = imageUrl;
     }
 
-    public String getCategoryName() {
-        return this.categoryName;
-    }
-
     public void setCategoryName(String categoryName) {
         this.categoryName = categoryName;
-    }
-
-    public String getDescription() {
-        return description;
     }
 
     public void setDescription(String description) {
@@ -59,16 +59,8 @@ public class Category {
         return "User {category id=" + id + ", category name='" + categoryName + "', description='" + description + "'}";
     }
 
-    public String getImageUrl() {
-        return imageUrl;
-    }
-
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
-    }
-
-    public Integer getId() {
-        return id;
     }
 
     public void setId(Integer id) {
